@@ -1,0 +1,65 @@
+<section class="custom-grid">
+  <div class="grid-container">
+    {% for i in (1..6) %}
+      {% assign product_id = 'product_' | append: i %}
+      {% assign product_handle = section.settings[product_id] %}
+      {% if product_handle != blank %}
+        {% assign product_obj = all_products[product_handle] %}
+        {% if product_obj %}
+          <div class="product-block" data-handle="{{ product_obj.handle }}">
+            <img src="{{ product_obj.featured_image | img_url: '300x' }}" alt="{{ product_obj.title | escape }}">
+            <h3>{{ product_obj.title }}</h3>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% render 'product-popup' %}
+</section>
+
+<link rel="stylesheet" href="{{ 'custom-sections.css' | asset_url }}">
+<script src="{{ 'custom-sections.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Product 4"
+    },
+    {
+      "type": "product",
+      "id": "product_5",
+      "label": "Product 5"
+    },
+    {
+      "type": "product",
+      "id": "product_6",
+      "label": "Product 6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}
