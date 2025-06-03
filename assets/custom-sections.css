@@ -1,0 +1,27 @@
+.custom-grid .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.product-block {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+}
+.popup.hidden { display: none; }
+.add-to-cart-btn {
+  margin-top: 10px;
+}
