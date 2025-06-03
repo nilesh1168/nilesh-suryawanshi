@@ -1,0 +1,49 @@
+# Node dependencies
+node_modules/
+package.json
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Shopify CLI & theme config
+.shopify/
+.shopify-cli.yml
+.env
+.env.*
+
+# Git & version control
+.git/
+.gitignore
+.gitattributes
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs & temporary files
+*.log
+*.tmp
+*.bak
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Build artifacts / dist folders
+dist/
+build/
+output/
+
+# Miscellaneous
+README.md
+LICENSE
+*.md
+*.zip
